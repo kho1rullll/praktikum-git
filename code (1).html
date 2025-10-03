@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SatuDataGuard: Proyek Transformasi Digital Indonesia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5; /* Light gray background */
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #ffffff;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #800000; /* Primary Maroon */
+            text-decoration: none;
+        }
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #800000; /* Primary Maroon */
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #800000, #c0392b); /* Maroon to darker red gradient */
+            color: #ffffff; /* Teks utama di hero section sudah putih */
+            text-align: center;
+            padding: 100px 20px;
+            border-radius: 0 0 15px 15px;
+            margin-bottom: 40px;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.3em;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            opacity: 0.9;
+            color: #ffffff; /* Menjamin warna putih */
+        }
+        .btn-primary {
+            background-color: #ffffff;
+            color: #800000; /* Primary Maroon */
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #f0f2f5; /* Lighter background on hover */
+        }
+
+        /* Section Styling */
+        section {
+            background-color: #ffffff;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        h2 {
+            font-size: 2.2em;
+            color: #800000; /* Primary Maroon */
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: #800000; /* Primary Maroon */
+            border-radius: 2px;
+        }
+        h3 {
+            font-size: 1.6em;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 4px solid #800000; /* Primary Maroon */
+            padding-left: 15px;
+        }
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: #ffe6e6; /* Light pink background for list items */
+            margin-bottom: 10px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.03);
+        }
+        ul li::before {
+            content: '✓'; /* Checkmark icon */
+            color: #28a745; /* Green checkmark (can be kept or changed) */
+            font-weight: 700;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        /* Card Layout for Features/Results */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .card {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+        .card h4 {
+            color: #800000; /* Primary Maroon */
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+            background-color: #333;
+            color: #f0f2f5;
+            border-radius: 15px 15px 0 0;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">SatuDataGuard</a>
+            <div class="nav-links">
+                <a href="#tentang">Tentang</a>
+                <a href="#solusi">Solusi Kami</a>
+                <a href="#fitur">Fitur Unggulan</a>
+                <a href="#dampak">Dampak</a>
+                <a href="#kontak">Kontak</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Mewujudkan Indonesia Cerdas & Transparan</h1>
+            <p>SatuDataGuard: Platform Inovatif Berbasis Big Data, AI, dan Blockchain untuk Tata Kelola Pemerintahan yang Lebih Baik.</p>
+            <a href="#solusi" class="btn-primary">Pelajari Lebih Lanjut</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="tentang">
+            <h2>Mengapa SatuDataGuard Penting?</h2>
+            <p>Indonesia menghadapi tantangan serius dalam tata kelola pemerintahan, mulai dari isu korupsi, birokrasi yang lambat, hingga kurangnya transparansi anggaran. Disinformasi dan lemahnya integrasi data antar lembaga seringkali menghambat pengambilan keputusan yang efektif dan real-time.</p>
+            <p>Kami hadir dengan <span style="font-weight: 600; color: #800000;">SatuDataGuard</span>, sebuah inisiatif proyek untuk membangun sistem informasi terpadu yang akan menjadi tulang punggung transformasi digital pemerintahan Indonesia.</p>
+        </section>
+
+        <section id="solusi">
+            <h2>Solusi Kami: Pilar Teknologi</h2>
+            <p>SatuDataGuard dirancang sebagai platform nasional terpadu yang mengintegrasikan teknologi mutakhir untuk menciptakan ekosistem data yang kuat dan terpercaya.</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Big Data Analytics</h4>
+                    <p>Mengelola dan menganalisis volume data yang sangat besar dari berbagai sumber untuk mendapatkan wawasan mendalam.</p>
+                </div>
+                <div class="card">
+                    <h4>Artificial Intelligence (AI)</h4>
+                    <p>Memanfaatkan Machine Learning dan Natural Language Processing untuk analisis prediktif, deteksi pola anomali, dan peringatan dini.</p>
+                </div>
+                <div class="card">
+                    <h4>Blockchain Technology</h4>
+                    <p>Menjamin transparansi, imutabilitas, dan keabsahan setiap transaksi serta data, menekan potensi manipulasi dan korupsi.</p>
+                </div>
+            </div>
+
+            <h3>Sumber Data Kami</h3>
+            <ul>
+                <li>Data dari instansi pemerintah (BPS, Dukcapil, KPU, Kemenkeu)</li>
+                <li>Informasi dari lembaga keuangan (BI, OJK)</li>
+                <li>Analisis sentimen dari media sosial</li>
+                <li>Data real-time dari IoT sensor lingkungan</li>
+                <li>Laporan dan aspirasi langsung dari masyarakat (crowdsourcing)</li>
+            </ul>
+        </section>
+
+        <section id="fitur">
+            <h2>Fitur Unggulan SatuDataGuard</h2>
+            <p>Kami membangun SatuDataGuard dengan serangkaian fitur inovatif yang dirancang untuk memberdayakan pemerintah dan masyarakat.</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Dashboard Transparansi Anggaran</h4>
+                    <p>Visualisasi real-time alokasi dan penggunaan anggaran nasional, dapat diakses oleh publik untuk akuntabilitas penuh.</p>
+                </div>
+                <div class="card">
+                    <h4>Early Warning System (EWS)</h4>
+                    <p>Deteksi dini potensi konflik sosial, bencana alam, dan krisis ekonomi melalui analisis data prediktif berbasis AI.</p>
+                </div>
+                <div class="card">
+                    <h4>Decision Support System (DSS)</h4>
+                    <p>Alat bantu bagi pemerintah untuk mengambil keputusan strategis berdasarkan analitik data yang valid dan real-time.</p>
+                </div>
+                <div class="card">
+                    <h4>Super App Masyarakat</h4>
+                    <p>Aplikasi mobile terintegrasi bagi warga untuk mengakses data publik, melaporkan masalah (pungli, banjir, harga pangan), dan memantau tindak lanjut laporan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dampak">
+            <h2>Dampak yang Kami Harapkan</h2>
+            <p>Implementasi SatuDataGuard akan membawa perubahan signifikan bagi Indonesia:</p>
+            <ul>
+                <li><span style="font-weight: 600; color: #800000;">Peningkatan Transparansi & Akuntabilitas:</span> Mengurangi peluang korupsi dan penyalahgunaan anggaran.</li>
+                <li><span style="font-weight: 600; color: #800000;">Pengambilan Keputusan Berbasis Data:</span> Kebijakan publik yang lebih efektif dan tepat sasaran.</li>
+                <li><span style="font-weight: 600; color: #800000;">Partisipasi Publik Aktif:</span> Masyarakat terlibat langsung dalam pengawasan dan pelaporan.</li>
+                <li><span style="font-weight: 600; color: #800000;">Mitigasi Krisis Nasional:</span> Kesiapsiagaan yang lebih baik dalam menghadapi potensi masalah.</li>
+                <li><span style="font-weight: 600; color: #800000;">Menuju Smart Nation:</span> Fondasi kuat untuk Indonesia yang lebih cerdas dan kompetitif.</li>
+            </ul>
+        </section>
+
+        <section id="kontak">
+            <h2>Tertarik Bergabung atau Berkolaborasi?</h2>
+            <p style="text-align: center;">Kami mencari mitra, talenta, dan dukungan untuk mewujudkan visi SatuDataGuard. Mari bersama membangun masa depan Indonesia yang lebih baik.</p>
+            <p style="text-align: center; font-weight: 600; color: #800000;">Hubungi kami untuk informasi lebih lanjut!</p>
+            <!-- Placeholder for a contact form or email link -->
+            <p style="text-align: center;"><a href="mailto:info@satadataguard.com" class="btn-primary">Kirim Email</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Dibuat oleh kelompok 1.</p>
+    </footer>
+</body>
+</html>
